@@ -89,19 +89,20 @@
         })
 
         // UC4 - Validating the password with min 8 characters
-
+        // UC5 - Validating password with atleast 1 uppercase, 1 numeric num, exactly 1 spl character"
         const password = document.querySelector("#password");
         const passwordError = document.querySelector(".password-error");
         password.addEventListener("input",function(){
-            let passwordFormat = /^.{8,}$/;
+            let passwordFormat =/^(?=.{8,}$)(?=.*[A-Z])(?=.*\d)(?!.*[^A-Za-z0-9].*[^A-Za-z0-9])[A-Za-z0-9]*[^A-Za-z0-9][A-Za-z0-9]*$/;
             if(passwordFormat.test(password.value)){
                 passwordError.textContent = "";
             }
             else{
-                passwordError.textContent = "Password Should be Minimum 8 characters";
+                passwordError.textContent = "Password format is Incorrect";
             }
         })
 
+        
 
         const salary = document.querySelector("#salary");
         let output = document.querySelector(".salary-output");
