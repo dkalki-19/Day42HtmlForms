@@ -24,11 +24,12 @@
         <div><label for="url">Enter the URL : </label>
         <input type="url" id="url"></div>  
 
-        <div><label for="number">Enter the Number : </label>
-        <input type="text" id="number"></div>
+        <div><label for="mobile">Enter the Mobile Number : </label>
+        <input type="number" id="mobile" name="mobile">
+        <error-output class="mobile-error" for="mobile"></error-output></div>
 
-        <div><label for="telephone">Enter the Telephone Number : </label> 
-        <input type="text" id="telephone"></div>   
+        <div><label for="tel">Enter the Telephone Number : </label> 
+        <input type="tel" id="tel" name="tel"></div>   
 
         <div><label for="search">Search Input : </label> 
         <input type="search" id="search"></div>
@@ -71,8 +72,6 @@ Name
                 emailError.textContent = "Email is Incorrect";
             }
         });
-
-        
 
         const salary = document.querySelector("#salary");
         let output = document.querySelector(".salary-output");
