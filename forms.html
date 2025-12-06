@@ -24,8 +24,9 @@
         <div><label for="url">Enter the URL : </label>
         <input type="url" id="url"></div>  
 
-        <div><label for="number">Enter the Number : </label>
-        <input type="text" id="number"></div>
+        <div><label for="mobile">Enter the Mobile Number : </label>
+        <input type="text" id="mobile" name="mobile">
+        <error-output class="mobile-error" for="mobile"></error-output></div>
 
         <div><label for="telephone">Enter the Telephone Number : </label> 
         <input type="text" id="telephone"></div>   
@@ -39,7 +40,7 @@
     </form>
     <script>
         // As a User need to enter a valid First
-Name
+
         // UC1 - Validating Name - Starting letter should be Capital. 
 
         const name = document.getElementById("name");
@@ -72,7 +73,21 @@ Name
             }
         });
 
-        
+        // UC3 - Validating Mobile Number :
+
+        const mobile = document.getElementById("mobile");
+        const mobileError = document.querySelector(".mobile-error");
+        mobile.addEventListener("input",function(){
+            let mobileFormat =  RegExp('^91\\s[0-9]{10}$');
+
+            if(mobileFormat.test(mobile.value)){
+                console.log("From 83 : ",mobile.value);
+                mobileError.textContent = "";
+            }else{
+                mobileError.textContent = "Incorrect Mobile Format";
+            }
+        })
+
 
         const salary = document.querySelector("#salary");
         let output = document.querySelector(".salary-output");
