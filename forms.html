@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./forms.css">
+</head>
+<body>
+    <header><h1>HTML 5 Form Input Fields</h1></header>
+    <form action="" method="POST">
+        <div ><label for="name">Text Input for Name : </label>
+        <input type="text" id="name" name="name">
+        <error-output class="text-error" for="name" ></error-output>
+        </div>
+
+        <div><label for="password">Enter the Password : </label>
+        <input type="password" id="password"></div>
+
+        <div><label for="email">Enter your EmailID : </label>
+        <input type="email" id="email">
+        <error-output class="email-error" for="email"></error-output></div>
+
+        <div><label for="url">Enter the URL : </label>
+        <input type="url" id="url"></div>  
+
+        <div><label for="number">Enter the Number : </label>
+        <input type="text" id="number"></div>
+
+        <div><label for="telephone">Enter the Telephone Number : </label> 
+        <input type="text" id="telephone"></div>   
+
+        <div><label for="search">Search Input : </label> 
+        <input type="search" id="search"></div>
+
+        <div><label for="datetime">Select the Date and Time : </label><input type="datetime"></div>
+        <div><label for="salary">Choose Your Salary : </label><input type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000"><output class="salary-output" for="salary">400000</output></div>
+        <div><button type="submit">Submit</button></div>
+    </form>
+    <script>
+        const name = document.getElementById("name");
+        let textError = document.querySelector(".text-error");
+        name.addEventListener("input",function(){
+            let nameRegex = RegExp('^[A-Z][a-zA-Z]*$');
+            if(nameRegex.test(name.value)){
+                textError.textContent = "";
+            }
+            else{
+                textError.textContent = "Name is Incorrect";
+            }
+
+        });
+
+        const salary = document.querySelector("#salary");
+        let output = document.querySelector(".salary-output");
+        output.textContent = salary.value;
+        output.addEventListener("output",function(){
+            output.textContent = salary.value;
+        })
+
+    </script>
+</body>
+</html>
