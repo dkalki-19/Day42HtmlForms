@@ -55,6 +55,25 @@ Name
 
         });
 
+        // UC2 - Validating email
+        
+        const email = document.getElementById("email");
+        let emailError = document.querySelector(".email-error");
+        email.addEventListener("input",function(){
+            
+            let emailRegex = RegExp('^[a-zA-Z]+(\.[a-zA-Z]+)?@[a-zA-Z]+\.[a-zA-Z]+(\.[a-zA-Z]+)?$');
+            if(emailRegex.test(email.value)){
+                emailError.textContent = "";
+                console.log("from 59".email.value);
+            }
+            else{
+                console.log("from 63",email.value);
+                emailError.textContent = "Email is Incorrect";
+            }
+        });
+
+        
+
         const salary = document.querySelector("#salary");
         let output = document.querySelector(".salary-output");
         output.textContent = salary.value;
